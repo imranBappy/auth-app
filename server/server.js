@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const routers = require('./routes/router');
 const middleware = require('./middlewares/middleware');
-const error = require('./middlewares/error');
-const notFound = require('./middlewares/notFound');
 const cors = require('cors')
 
 const app = express();
@@ -20,7 +18,7 @@ routers(app)
 middleware(app);
 
 
-const url = `mongodb://localhost:27017/authApp`
+const url = `mongodb://localhost:27017/gameing-app`
 const port = PORT || 4000;
 mongoose.connect(url,
     { useNewUrlParser: true, useUnifiedTopology: true }, 
