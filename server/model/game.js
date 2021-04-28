@@ -1,6 +1,5 @@
 const {Schema, model} = require('mongoose');
 
-
 const gameSchema = new Schema({
     title:{
         type: String,
@@ -9,6 +8,10 @@ const gameSchema = new Schema({
     rate:{
         type: Number,
         require: true,
+    },
+    win:{
+        type: Boolean,
+        default: false
     },
     date: { type: Date, default: Date.now }
 })

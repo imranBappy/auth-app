@@ -1,0 +1,29 @@
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button{
+    width:200px;
+    padding:10px;
+    margin: 0 auto;
+}
+.signup-link a{
+    color: #000;
+    text-decoration: none;
+}
+.signup-link {
+    margin: 10px 0px;
+}
+
+#signup-container{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 1180px;
+  margin: 0 auto;
+} 

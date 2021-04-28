@@ -5,7 +5,7 @@ const {
  } = require('../controllers/authController');
  
 // signup route
-router.post('/', signupPostController)
+router.post('/signup', signupPostController)
 
 //singin route
 
