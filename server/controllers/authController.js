@@ -9,7 +9,6 @@ exports.signupPostController = async (req, res, next)=>{
         const isUser = await User.findOne({username});
         if (!isUser) {
             const hash = await bcrypt.hash(password, 10);
-            
             const newUser = new User({
             name,
             username,

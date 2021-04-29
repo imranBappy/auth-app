@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../img/logo.png';
 import './header.css';
+
+
+
 const Header = () => {
+    
     return (
     <header>
     	    <div className="container">
@@ -16,7 +20,7 @@ const Header = () => {
                         <li><Link to='/' >Home</Link></li>
                         <li><Link to='/auth/singin' >Singin</Link></li>
                         <li><Link to='/' >About</Link></li>
-                        <li><Link to='/' >Contact</Link></li>
+                        <li><Link to='/' >{}</Link></li>
                     </ul>
                 </div>
             </div>

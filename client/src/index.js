@@ -4,7 +4,6 @@ import App from './App';
 import Layout from './components/Layout/Layout';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
 ReactDOM.render(
   <React.StrictMode>
     <Layout>

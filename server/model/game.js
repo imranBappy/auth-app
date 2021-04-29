@@ -16,5 +16,5 @@ const gameSchema = new Schema({
     date: { type: Date, default: Date.now }
 })
 
-const game = model('game', gameSchema);
-module.exports = game;
+const Game = model('game', gameSchema);
+module.exports = Game;

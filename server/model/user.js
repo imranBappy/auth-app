@@ -20,6 +20,10 @@ const userSchema = new Schema({
         trim: true,
         required: true
     },
+    balance:{ 
+        type: Number,
+        default: 100
+    },
     date: { type: Date, default: Date.now }
 })
 

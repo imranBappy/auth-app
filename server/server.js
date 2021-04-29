@@ -20,7 +20,7 @@ routers(app)
 middleware(app);
 
 
-const url = `mongodb://localhost:27017/authApp`
+const url = `mongodb://localhost:27017/betingApp`
 const port = PORT || 4000;
 mongoose.connect(url,
     { useNewUrlParser: true, useUnifiedTopology: true }, 
