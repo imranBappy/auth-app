@@ -20,6 +20,7 @@ exports.betPostController = async (req, res, next)=>{
 // sobar update kora
 
 exports.betPutResultController = async (req,res, next)=>{
-    const _id = req.body
-    console.log(_id);
+    const {gameId} = req.params
+    console.log(gameId);
+    console.log(2000)
 }

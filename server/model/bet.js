@@ -1,4 +1,6 @@
 const {Schema, model} = require('mongoose');
+const Game = require('./game');
+// const User = require('./user');
 
 const betSchema = new Schema({
     bet:{
@@ -16,7 +18,7 @@ const betSchema = new Schema({
     },
     game:{
         type: Schema.Types.ObjectId,
-        ref: 'game',
+        ref: Game,
         require: true
     },
 })
