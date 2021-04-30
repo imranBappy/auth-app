@@ -4,7 +4,7 @@ import './App.css';
 import Home from './components/Home/Home';
 import { Signup, Singin } from './components/Layout/Layout';
 dotenv.config();
-function App() {
+function Client() {
   return (
     <>
       <Switch>
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default Client;

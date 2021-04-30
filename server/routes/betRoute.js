@@ -2,9 +2,6 @@ const { betPostController , betPutResultController} = require('../controllers/be
 const isAuthenticated = require('../middlewares/isAuthenticated');
 
 const router = require('express').Router();
-const User = require('./user');
-//  /bet
-
 router.post('/add',isAuthenticated, betPostController)
 router.put('/result/:gameId', betPutResultController)
 
