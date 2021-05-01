@@ -23,7 +23,7 @@ middleware(app);
 const url = `mongodb://localhost:27017/betingApp`
 const port = PORT || 4000;
 mongoose.connect(url,
-    { useNewUrlParser: true, useUnifiedTopology: true }, 
+    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, 
     ()=>{
     app.listen(port,()=>{
         console.log(`http://localhost:${port}`);

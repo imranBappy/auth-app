@@ -16,5 +16,15 @@ const gameSchema = new Schema({
     date: { type: Date, default: Date.now }
 })
 
+gameSchema.statics = {
+    findGame: function(id){
+        return this.findById(id).select({
+            __v:0,
+            title: 0,
+            date:0
+        })
+    }
+}
+
 const Game = model('game', gameSchema);
 module.exports = Game;

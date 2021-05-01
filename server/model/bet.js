@@ -23,6 +23,18 @@ const betSchema = new Schema({
     },
 })
 
+// betSchema.statics = {
+//     findGames: function(id){
+//         // console.log(id);
+//         // console.log(4000);
+//         return this.findById(id).select({
+//             _id: 0,
+//             __v: 0,
+//             date: 0,
+//         }) 
+//     }
+// }
+
 const Bet = model('Bet', betSchema);
 
 module.exports = Bet;

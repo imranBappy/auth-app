@@ -29,7 +29,7 @@ exports.singinPostController = async (req, res, next)=>{
     try {
         const isUser = await User.findOne({username});
         if (isUser) {
-            const isValidPassword = bcrypt.compare(password, isUser.password)
+            const isValidPassword = await bcrypt.compare(password, isUser.password)
             if (isValidPassword) {
                 const token = jwt.sign(
                     {_id:isUser._id, username},

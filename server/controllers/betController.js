@@ -1,7 +1,6 @@
-// const { } = require("mongoose");
 const Bet = require("../model/bet");
-// const Game = require("../model/game")
-// const User = require("../model/user");
+const Game = require("../model/game");
+const User = require("../model/user");
 const manageData = require("../utils/manageData");
 
 exports.betPostController = async (req, res, next)=>{
@@ -15,12 +14,32 @@ exports.betPostController = async (req, res, next)=>{
     res.json(manageData('Bet created successfully!', newBet))
 }
 
-// bet true hobe 
-// ke ke bet korche
-// sobar update kora
-
 exports.betPutResultController = async (req,res, next)=>{
     const {gameId} = req.params
-    console.log(gameId);
-    console.log(2000)
+    try {
+        const findGame = await Game.findGame(gameId);
+        const allBets = await Bet.find({game: findGame.gameId})
+        if (!findGame.win) {
+            for (let i = 0; i < allBets.length; i++) {
+                const bet = allBets[i];
+                const findUser = await User.findById(bet.user)
+                const updateBalance = bet.bet * findGame.rate;
+                await User.findByIdAndUpdate(findUser._id, {
+                    $set:{
+                        balance:findUser.balance + updateBalance
+                    }
+                });
+                await Bet.findByIdAndUpdate(bet._id,{
+                    $set:{isWin: true}
+                })
+            }
+            const gameUpdate = await Game.findByIdAndUpdate(gameId,{
+                $set:{win: true}
+            },{new: true});
+            return res.json(manageData('All data updated', gameUpdate))
+        };
+        next('Allrady bet is win');
+    } catch(err) {
+        next()
+    }
 }
